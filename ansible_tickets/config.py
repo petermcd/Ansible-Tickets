@@ -4,7 +4,7 @@ from yaml import load
 class Config:
     __slots__ = ['_conf']
 
-    def __init__(self, filename: str, path: str = '/usr/etc/opt/'):
+    def __init__(self, filename: str, path: str = '/etc/'):
         """
             Constructor
 
