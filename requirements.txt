@@ -1,1 +1,3 @@
+ansible-output-parser
 jira
+pyyaml
