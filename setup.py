@@ -1,8 +1,8 @@
 from setuptools import find_packages, setup
 
-PACKAGE_NAME = 'Anislbe Ticket Creation'
+PACKAGE_NAME = 'Ansible Tickets'
 PACKAGE_VERSION = '0.0.1'
-DESCRIPTION='Creates Jira tickets for Ansible failures.'
+DESCRIPTION = 'Creates Jira tickets for Ansible failures.'
 with open('README.md', 'r') as fileHandler:
     LONG_DESCRIPTION = fileHandler.read()
 
