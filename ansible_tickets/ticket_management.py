@@ -1,3 +1,5 @@
+import logging
+
 from typing import Dict, Optional
 
 from jira.resources import Issue
@@ -45,6 +47,7 @@ class TicketManagement:
             :param description: The description of the ticket
             :param issue_type: Ticket type
         """
+        logging.info(f'Creating ticket {title} in project {project} of type {issue_type}')
         issue_dict = {
             'project': {'key': project},
             'summary': title,
@@ -93,4 +96,5 @@ class TicketManagement:
             :param ticket: Ticket requiring a new comment
             :param comment: Comment to be added
         """
+        logging.debug(f'Updating ticket {ticket.key} with comment "{comment}"')
         self._jira.add_comment(ticket.key, comment)
