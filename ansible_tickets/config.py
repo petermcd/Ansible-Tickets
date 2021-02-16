@@ -1,4 +1,4 @@
-from yaml import load
+from yaml import safe_load
 
 
 class Config:
@@ -13,7 +13,7 @@ class Config:
         """
         file = f'{path}{filename}'
         with open(file, 'r') as handler:
-            self._conf = load(handler)
+            self._conf = safe_load(handler)
 
     def get(self, item: str) -> str:
         """

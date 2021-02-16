@@ -1,6 +1,5 @@
 import logging
-
-from sys import argv
+import sys
 
 from ansible_tickets.runner import Runner
 
@@ -11,11 +10,10 @@ def init():
     """
         Entry point for the application.
     """
-    try:
-        Runner(ansible_output=argv[1])
-    except IndexError:
-        LOG.debug('No data received')
-        exit(1)
+    input = ''
+    for line in sys.stdin:
+        input = input + line
+    Runner(ansible_output=input)
 
 
 if __name__ == '__main__':
