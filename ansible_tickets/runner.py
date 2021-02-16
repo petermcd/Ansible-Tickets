@@ -13,8 +13,8 @@ class Runner:
             :param ansible_output: The output received from Ansible
         """
         self._config = Config('ansible_tickets.conf')
-        self._failures = self._parser.failures()
         self._parser = Play(ansible_output)
+        self._failures = self._parser.failures()
         self._tickets = TicketManagement(self._config)
         for play in self._failures:
             self._process_play(play)
