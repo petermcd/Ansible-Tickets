@@ -60,8 +60,9 @@ class Runner:
             else:
                 logging.info(f'Creating ticket {ticket_title}')
                 self._tickets.create_ticket(
-                    self._config.get('jira_project'),
-                    ticket_title,
-                    host['failure_message'],
-                    self._config.get('ticket_type')
+                    project=self._config.get('jira_project'),
+                    title=ticket_title,
+                    description=host['failure_message'],
+                    insight_object_key=self._tickets.get_insight_object_key(host["host"]),
+                    issue_type=self._config.get('ticket_type')
                 )
