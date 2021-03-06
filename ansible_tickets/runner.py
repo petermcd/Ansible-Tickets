@@ -53,7 +53,7 @@ class Runner:
         logging.debug(f'Processing failures for job {job} in play {play}')
         for host in self._failures[play][job][level]:
             ticket_title = f'{host["host"]} - {play} - {job}'
-            if self._tickets.ticket_exists('TEST', ticket_title):
+            if self._tickets.ticket_exists(self._config.get('jira_project'), ticket_title):
                 logging.info(f'Updating ticket {ticket_title}')
                 existing_ticket = self._tickets.get_ticket(self._config.get('jira_project'), ticket_title)
                 self._tickets.update_ticket(existing_ticket, host['failure_message'])
