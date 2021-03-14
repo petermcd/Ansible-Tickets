@@ -8,13 +8,13 @@ LOG = logging
 
 def init():
     """
-        Entry point for the application.
+    Entry point for the application.
     """
-    input = ''
+    input = ""
     for line in sys.stdin:
         input = input + line
     Runner(ansible_output=input)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     init()
