@@ -1,5 +1,3 @@
 ansible-output-parser
-black
 jira
-isort
 pyyaml

@@ -7,9 +7,9 @@ with open("README.md", "r") as fileHandler:
     LONG_DESCRIPTION = fileHandler.read()
 
 TEST_REQUIRES = [
+    "black",
     "flake8",
-    "mypy",
-    "pytest",
+    "isort",
     "twine",
     "wheel",
 ]
