@@ -10,6 +10,7 @@ TEST_REQUIRES = [
     "black",
     "flake8",
     "isort",
+    "mypy",
     "twine",
     "wheel",
 ]
