@@ -1,12 +1,15 @@
+"""Module to handle configuration."""
 from yaml import safe_load
 
 
 class Config:
+    """Class to handle configuration."""
+
     __slots__ = ["_conf"]
 
     def __init__(self, filename: str, path: str = "/etc/"):
         """
-        Constructor
+        Initialise Config.
 
         :param filename: The name of the config file
         :param path: The path of the config file
@@ -17,7 +20,7 @@ class Config:
 
     def get(self, item: str) -> str:
         """
-        Getter for config values
+        Getter for config values.
 
         :param item: The config item required
 

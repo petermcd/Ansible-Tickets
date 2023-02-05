@@ -1,3 +1,4 @@
+"""Module to handle entry point."""
 import logging
 import sys
 
@@ -7,9 +8,7 @@ LOG = logging
 
 
 def init():
-    """
-    Entry point for the application.
-    """
+    """Entry point for the application."""
     input = ""
     for line in sys.stdin:
         input = input + line
