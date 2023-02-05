@@ -26,6 +26,4 @@ class Config:
 
         :return: Value for config if exists otherwise an empty string
         """
-        if item in self._conf:
-            return self._conf[item]
-        return ""
+        return self._conf[item] if item in self._conf else ""
