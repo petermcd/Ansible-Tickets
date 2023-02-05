@@ -1,3 +1,4 @@
+"""Package init creating logger."""
 import logging
 
 logging.basicConfig(

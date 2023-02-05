@@ -1,3 +1,4 @@
+"""Module to manage Jira tickets."""
 import logging
 from typing import Any, Dict, List, Optional, Union
 
@@ -8,12 +9,12 @@ from ansible_tickets.config import Config
 
 
 class TicketManagement:
+    """Class to manage Jira tickets."""
+
     __slots__ = ["_insight_field", "_insight_objects", "_jira", "_tickets"]
 
     def __init__(self, config: Config):
-        """
-        Constructor
-        """
+        """Initialise TicketManagement."""
         self._insight_field = config.get("insight_field")
         self._insight_objects: Dict[str, Any] = {}
         self._tickets: Dict[str, Issue] = {}
@@ -24,7 +25,7 @@ class TicketManagement:
 
     def ticket_exists(self, project: str, title: str) -> bool:
         """
-        Checks if a ticket exists with the given title in the given project
+        Check if a ticket exists with the given title in the given project.
 
         :param project: Project to search for a ticket
         :param title: Title of the ticket we are looking for
@@ -45,7 +46,7 @@ class TicketManagement:
         issue_type: str = "Bug",
     ):
         """
-        Creates a ticket in the given project
+        Create a ticket in the given project.
 
         :param project: Jira project the ticket should be created in
         :param title: The desired title of the ticket
@@ -68,7 +69,7 @@ class TicketManagement:
 
     def get_ticket(self, project: str, title: str) -> Optional[Issue]:
         """
-        Gets the ticket details that match the project and title
+        Get the ticket details that match the project and title.
 
         :param project: The Jira project that a ticket will exist in
         :param title: The title of the ticket required
@@ -84,7 +85,7 @@ class TicketManagement:
 
     def get_ticket_by_id(self, ticket_id: str) -> Optional[Issue]:
         """
-        Retrieves a ticket by ID
+        Retrieve a ticket by ID.
 
         :param ticket_id: Jira ticket ID
 
@@ -101,7 +102,7 @@ class TicketManagement:
 
     def update_ticket(self, ticket: Issue, comment: str) -> None:
         """
-        Adds a comment to an existing Jira ticket
+        Add a comment to an existing Jira ticket.
 
         :param ticket: Ticket requiring a new comment
         :param comment: Comment to be added
@@ -111,7 +112,7 @@ class TicketManagement:
 
     def get_insight_object_key(self, host: str) -> str:
         """
-        Fetches Insight objects matching the IP
+        Fetch Insight objects matching the IP.
 
         :param host: IP or Hostname of the object to retrieve
 

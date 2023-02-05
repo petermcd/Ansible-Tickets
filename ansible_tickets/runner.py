@@ -1,3 +1,4 @@
+"""Main module to action tasks."""
 import logging
 
 from ansible_parser.play import Play
@@ -7,11 +8,13 @@ from ansible_tickets.ticket_management import TicketManagement
 
 
 class Runner:
+    """Class to action process."""
+
     __slots__ = ["_config", "_failures", "_parser", "_tickets"]
 
     def __init__(self, ansible_output):
         """
-        Sets up the parser
+        Set up the parser.
 
         :param ansible_output: The output received from Ansible
         """
@@ -24,7 +27,7 @@ class Runner:
 
     def _process_play(self, play: str):
         """
-        Process a play
+        Process a play.
 
         :param play: The name of the play being processed
         """
@@ -34,7 +37,7 @@ class Runner:
 
     def _process_level(self, play: str, job: str):
         """
-        Process a job
+        Process a job.
 
         :param play: The name of the play being processed
         :param job: The name of the job being processed
@@ -45,7 +48,7 @@ class Runner:
 
     def _process_job(self, play: str, job: str, level: str):
         """
-        Process a job
+        Process a job.
 
         :param play: The name of the play being processed
         :param job: The name of the job being processed
